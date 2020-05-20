@@ -59,6 +59,8 @@ $root用户登录
 >import pymongo  
 >myclient = pymongo.MongoClient(host='192.168.43.123', port=27017, username='admin', password='csu3216300.', authSource='admin')  
 >dblist = myclient.list_database_names()  
->dblist  #即可看到数据库列表
+>dblist  #即可看到数据库列表  
+
+7.使用pymongo操作数据库
 
 
