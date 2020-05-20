@@ -8,16 +8,16 @@ Centos7
 (见https://github.com/BoolWang/HotLinux)  
 
 2.mongodb版本  
-mongodb-org-4.0  
+[mongodb-org-3.2]
 
-3.创建.repo文件，生成mongodb的源  
-vi /etc/yum.repos.d/mongodb-org-4.0.repo  
+3.创建.repo文件，生成mongodb的源
+yum update  
+vi /etc/yum.repos.d/mongodb-org-3.2.repo  
 写入：  
-[mongodb-org-4.0]  
+[mongodb-org-3.2]  
 name=MongoDB Repository  
-baseurl=https://repo.mongodb.org/yum/redhat/#releasever/mongodb-org/4.0/x86_64/  
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.2/x86_64/  
 gpgcheck=1  
 enabled=1  
-gpgkey=https://www.mongodb.org/static/pgp/server-4.0.asc  
-yum安装：yum install -y mongodb-org  
+gpgkey=https://www.mongodb.org/static/pgp/server-3.2.asc  
 
