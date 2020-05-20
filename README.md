@@ -20,4 +20,24 @@ baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.2/x86_64/
 gpgcheck=1  
 enabled=1  
 gpgkey=https://www.mongodb.org/static/pgp/server-3.2.asc  
+安装：sudo yum install mongodb-org  
+
+4.初始配置  
+4.1 配置/etc/mongod.conf  
+vi /etc/mongod.conf
+修改：net:->bindip:0.0.0.0  
+添加：security:authorization: enabled  
+4.2 添加管理用户  
+打开mongo shell：mongo  
+>use admin  
+>db.creatUser(    
+... {  
+... user:"root",  
+... pwd:"**********",   #密码  
+... roles:[{role:"userAdminAnyDatabase",db:"admin"}]  
+... }  
+... )  
+
+
+
 
