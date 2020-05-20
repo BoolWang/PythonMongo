@@ -38,6 +38,27 @@ vi /etc/mongod.conf
 ... }  
 ... )  
 
+测试用户登录：mongo -u root -p --authenticationDatabase admin  
+输入密码即可登录，但root用户没有数据库的操作权限  
+4.3 添加可操作数据库的管理用户  
+$root用户登录  
+>use admin  
+>db.creatUser(  
+... {  
+... user:"admin",  
+... pwd:"*********",  
+... roles:[{role:"readWriteAnyDatabase",db:"admin"}]  
+... }  
+... )  
 
+5.远程连接  
+使用robomongo连接  
+
+6.pymongo远程连接  
+安装pymongo：pip install pymongo  
+>import pymongo  
+>myclient = pymongo.MongoClient(host='192.168.43.123', port=27017, username='admin', password='csu3216300.', authSource='admin')  
+>dblist = myclient.list_database_names()  
+>dblist  #即可看到数据库列表
 
 
